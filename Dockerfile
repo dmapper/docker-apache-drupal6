@@ -36,6 +36,7 @@ RUN a2enmod php5
 RUN a2enmod rewrite
 RUN a2ensite default-ssl
 RUN a2enmod ssl
+RUN service apache2 restart
 
 # PHP
 RUN sed -i 's/memory_limit = .*/memory_limit = 196M/' /etc/php5/apache2/php.ini
