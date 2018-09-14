@@ -34,6 +34,8 @@ RUN ln -s /.composer/vendor/drush/drush/drush /usr/local/bin/drush
 # Enable apache mods.
 RUN a2enmod php5
 RUN a2enmod rewrite
+RUN a2ensite default-ssl
+RUN a2enmod ssl
 
 # PHP
 RUN sed -i 's/memory_limit = .*/memory_limit = 196M/' /etc/php5/apache2/php.ini
